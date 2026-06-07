@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aswin Kumaran | SAP BTP Architect</title>
+    <title>Aswin Kumaran | SAP BTP • CPI • DMC Architect</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -13,462 +13,664 @@
             box-sizing: border-box;
         }
 
-        /* DARK/RED THEME - Like the viral portfolio */
-        :root {
-            --bg-dark: #0a0a0a;
-            --bg-card: rgba(20, 20, 30, 0.7);
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --accent-red: #ff3333;
-            --accent-glow: rgba(255, 51, 51, 0.3);
-            --border-glow: rgba(255, 51, 51, 0.2);
-        }
-
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-dark);
-            color: var(--text-primary);
-            overflow-x: hidden;
+            background: #ffffff;
+            color: #1a1a2e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
 
-        /* Animated Dark Gradient Background */
-        .animated-bg {
+        /* Navigation */
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -2;
-            background: radial-gradient(circle at 20% 30%, #1a0a0a 0%, #0a0a0a 50%, #000000 100%);
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            padding: 16px 0;
+            border-bottom: 1px solid #eef2f6;
         }
 
-        .animated-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(45deg, rgba(255,51,51,0.03) 0px, rgba(255,51,51,0.03) 2px, transparent 2px, transparent 8px);
-            pointer-events: none;
-        }
-
-        /* Glowing orb effects */
-        .glow-orb {
-            position: fixed;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(255,51,51,0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            filter: blur(40px);
-            z-index: -1;
-        }
-        .orb1 { top: 10%; left: -5%; animation: float 20s infinite; }
-        .orb2 { bottom: 10%; right: -5%; background: radial-gradient(circle, rgba(255,51,51,0.1) 0%, transparent 70%); animation: float 25s infinite reverse; }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, -30px) scale(1.1); }
-        }
-
-        .container {
-            max-width: 1300px;
+        .nav-container {
+            max-width: 1280px;
             margin: 0 auto;
             padding: 0 40px;
-        }
-
-        /* Glassmorphism Navbar */
-        .navbar {
-            position: sticky;
-            top: 20px;
-            z-index: 100;
-            backdrop-filter: blur(16px);
-            background: rgba(10, 10, 10, 0.7);
-            border-radius: 60px;
-            margin: 20px auto;
-            padding: 6px 28px;
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-        }
-
-        .nav-flex {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
-        }
-        .logo span {
-            color: var(--accent-red);
+            background: linear-gradient(135deg, #0a5c8e, #1e3a5f);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
+            gap: 40px;
             list-style: none;
         }
+
         .nav-links a {
             text-decoration: none;
-            color: var(--text-secondary);
+            color: #334155;
             font-weight: 500;
             transition: color 0.2s;
-            font-size: 0.9rem;
-        }
-        .nav-links a:hover {
-            color: var(--accent-red);
         }
 
-        /* Hero Section - "Hi, I'm..." style */
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+
+        /* Hero Section */
         .hero {
-            min-height: 90vh;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 40px 0;
+            padding: 120px 40px 60px;
+            background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
         }
-        .hero-grid {
+
+        .hero-container {
+            max-width: 1280px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
+            grid-template-columns: 1fr 0.8fr;
             gap: 60px;
             align-items: center;
         }
+
         .hero-badge {
             display: inline-block;
-            background: rgba(255, 51, 51, 0.15);
-            border: 1px solid rgba(255, 51, 51, 0.3);
-            padding: 5px 14px;
-            border-radius: 30px;
-            font-size: 0.7rem;
+            background: #e6f0f9;
+            color: #0a5c8e;
+            padding: 8px 20px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 600;
             margin-bottom: 28px;
-            color: var(--accent-red);
         }
+
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+            color: #0f172a;
         }
-        .highlight {
-            color: var(--accent-red);
+
+        .hero-highlight {
+            color: #e67e22;
             position: relative;
             display: inline-block;
         }
-        .highlight::after {
+
+        .hero-highlight::after {
             content: '';
             position: absolute;
-            bottom: 5px;
+            bottom: 8px;
             left: 0;
-            width: 100%;
-            height: 6px;
-            background: var(--accent-red);
-            border-radius: 3px;
-            opacity: 0.4;
+            right: 0;
+            height: 8px;
+            background: rgba(230, 126, 34, 0.2);
+            z-index: -1;
         }
-        .hero p {
-            color: var(--text-secondary);
+
+        .hero-desc {
             font-size: 1.1rem;
+            color: #475569;
             margin-bottom: 32px;
             max-width: 500px;
         }
+
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
         .btn-primary {
-            background: var(--accent-red);
-            color: #fff;
-            padding: 12px 30px;
-            border-radius: 40px;
+            background: #1e3a5f;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.2s;
+            transition: all 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            box-shadow: 0 0 15px rgba(255,51,51,0.3);
-        }
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 0 25px rgba(255,51,51,0.5);
-        }
-        .btn-outline {
-            border: 1px solid var(--accent-red);
-            padding: 12px 30px;
-            border-radius: 40px;
-            text-decoration: none;
-            color: var(--text-primary);
-            font-weight: 500;
-            transition: all 0.2s;
-            margin-left: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn-outline:hover {
-            background: rgba(255,51,51,0.1);
-            border-color: var(--accent-red);
         }
 
-        /* Profile Circle */
-        .profile-circle {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent-red), #ff6666);
-            padding: 4px;
-            margin: 0 auto;
+        .btn-primary:hover {
+            background: #0f2b48;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
         }
-        .profile-circle img {
-            width: 100%;
-            height: 100%;
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1e3a5f;
+            color: #1e3a5f;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: #1e3a5f;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Profile Image */
+        .profile-wrapper {
+            position: relative;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 320px;
+            height: 320px;
             border-radius: 50%;
             object-fit: cover;
-            background: var(--bg-dark);
+            border: 4px solid white;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #e6f0f9, #ffffff);
         }
 
-        /* Stats */
-        .stats-row {
+        .profile-badge {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: #e67e22;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        /* Stats Section */
+        .stats {
             display: flex;
-            gap: 40px;
-            margin-top: 50px;
+            gap: 48px;
+            margin-top: 48px;
         }
+
         .stat-item {
-            text-align: left;
+            text-align: center;
         }
+
         .stat-number {
             font-size: 2rem;
             font-weight: 800;
-            color: var(--accent-red);
-        }
-        .stat-label {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
+            color: #1e3a5f;
+            display: block;
         }
 
-        /* Section Titles */
+        /* Section Styles */
+        .section {
+            padding: 80px 40px;
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
         .section-title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 700;
-            margin: 60px 0 16px 0;
-        }
-        .section-title span {
-            color: var(--accent-red);
+            margin-bottom: 16px;
+            text-align: center;
         }
 
-        /* Skills - Red Themed */
-        .skills-container {
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 48px;
+            font-size: 1.1rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 24px;
-            margin: 40px 0;
         }
+
         .skill-card {
-            background: rgba(20, 20, 30, 0.6);
-            backdrop-filter: blur(10px);
+            background: #f8fafc;
             border-radius: 24px;
-            padding: 24px;
-            border: 1px solid rgba(255,51,51,0.15);
+            padding: 28px;
             transition: all 0.3s;
+            border: 1px solid #eef2f6;
         }
+
         .skill-card:hover {
-            border-color: var(--accent-red);
             transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+            border-color: #e67e22;
         }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
         .skill-card h3 {
+            font-size: 1.3rem;
             margin-bottom: 16px;
-            font-size: 1.2rem;
         }
+
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 10px;
         }
+
         .skill-tag {
-            background: rgba(255,51,51,0.15);
-            padding: 5px 14px;
+            background: white;
+            padding: 6px 14px;
             border-radius: 30px;
             font-size: 0.75rem;
             font-weight: 500;
+            color: #1e3a5f;
+            border: 1px solid #e2e8f0;
         }
 
-        /* Project Cards - Glassmorphism */
+        /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 32px;
         }
+
         .project-card {
-            background: rgba(20, 20, 30, 0.5);
-            backdrop-filter: blur(12px);
+            background: #f8fafc;
             border-radius: 28px;
-            padding: 28px;
-            border: 1px solid rgba(255,51,51,0.1);
-            transition: all 0.3s ease;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid #eef2f6;
         }
+
         .project-card:hover {
             transform: translateY(-8px);
-            border-color: var(--accent-red);
-            box-shadow: 0 15px 35px -10px rgba(255,51,51,0.2);
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.12);
         }
+
+        .project-content {
+            padding: 28px;
+        }
+
         .project-icon {
-            font-size: 2rem;
+            font-size: 2.2rem;
             margin-bottom: 16px;
         }
+
         .project-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
         }
+
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 15px 0;
+            margin: 16px 0;
         }
+
         .project-tech span {
-            background: rgba(255,51,51,0.15);
+            background: #e6f0f9;
             padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.7rem;
+            font-weight: 600;
+            color: #0a5c8e;
         }
-        .project-card p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.5;
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #e67e22, #1e3a5f);
+        }
+
+        .timeline-item {
+            margin-bottom: 48px;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 24px;
+            width: calc(50% - 30px);
+            border: 1px solid #eef2f6;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 16px;
+            height: 16px;
+            background: #e67e22;
+            border-radius: 50%;
+            top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before { left: 20px; }
+            .timeline-content { width: calc(100% - 50px); margin-left: 50px !important; }
+            .timeline-dot { left: 28px; }
+            .hero-container { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 2.5rem; }
+            .btn-group { justify-content: center; }
+            .stats { justify-content: center; }
         }
 
         /* Contact Section */
         .contact-section {
-            background: rgba(20, 20, 30, 0.5);
-            backdrop-filter: blur(12px);
+            background: linear-gradient(135deg, #1e3a5f, #0f2b48);
             border-radius: 48px;
-            padding: 50px;
+            padding: 60px;
             text-align: center;
-            margin: 60px 0;
-            border: 1px solid rgba(255,51,51,0.2);
+            color: white;
         }
-        .contact-links {
+
+        .contact-section h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-buttons {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 24px;
             flex-wrap: wrap;
-            margin: 30px 0;
-        }
-        .contact-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .contact-links a:hover {
-            color: var(--accent-red);
+            margin-top: 32px;
         }
 
+        .contact-btn {
+            background: rgba(255,255,255,0.1);
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .contact-btn:hover {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
         footer {
             text-align: center;
-            padding: 30px;
-            color: var(--text-secondary);
-            border-top: 1px solid rgba(255,51,51,0.1);
-            font-size: 0.8rem;
+            padding: 40px;
+            color: #94a3b8;
+            border-top: 1px solid #eef2f6;
         }
 
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero p { margin-left: auto; margin-right: auto; }
-            .stats-row { justify-content: center; }
-            .container { padding: 0 20px; }
-            .hero h1 { font-size: 2.5rem; }
-            .profile-circle { width: 200px; height: 200px; }
+        /* Floating Social */
+        .floating-social {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 100;
+        }
+
+        .social-icon {
+            background: #1e3a5f;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .social-icon:hover {
+            background: #e67e22;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-<div class="animated-bg"></div>
-<div class="glow-orb orb1"></div>
-<div class="glow-orb orb2"></div>
 
-<div class="container">
-    <nav class="navbar">
-        <div class="nav-flex">
-            <div class="logo">Aswin.<span>K</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">Aswin.<span style="color:#e67e22">K</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- Floating Social Links -->
+<div class="floating-social">
+    <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+    <a href="mailto:aswinkumaran18@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+    <a href="https://github.com/awinkumaran18-prog" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
 </div>
 
-<main>
-    <div class="container hero" id="home">
-        <div class="hero-grid">
-            <div>
-                <div class="hero-badge"><i class="fas fa-cloud-upload-alt"></i> SAP BTP · CPI · DMC Architect</div>
-                <h1>Hi, I'm <span class="highlight">Aswin Kumaran</span><br>Your SAP Cloud Expert</h1>
-                <p>3.9+ years building cloud-native enterprise apps, event-driven CPI integrations, and Industry 4.0 digital manufacturing solutions.</p>
-                <div>
-                    <a href="#projects" class="btn-primary"><i class="fas fa-arrow-right"></i> View My Work</a>
-                    <a href="#contact" class="btn-outline"><i class="fas fa-paper-plane"></i> Contact Me</a>
-                </div>
-                <div class="stats-row">
-                    <div class="stat-item"><div class="stat-number">12+</div><div class="stat-label">Enterprise Projects</div></div>
-                    <div class="stat-item"><div class="stat-number">4</div><div class="stat-label">Major Implementations</div></div>
-                    <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Cloud Success</div></div>
-                </div>
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-container">
+        <div>
+            <div class="hero-badge">
+                <i class="fas fa-cloud-upload-alt"></i> SAP BTP • CPI • DMC Expert
             </div>
-            <div class="profile-circle">
-                <img src="profile.jpg" alt="Aswin Kumaran" onerror="this.src='https://via.placeholder.com/300?text=Aswin+K'">
+            <h1>
+                Hi, I'm <span class="hero-highlight">Aswin Kumaran</span><br>
+                SAP BTP & Integration Architect
+            </h1>
+            <p class="hero-desc">
+                3.9+ years delivering cloud-native enterprise solutions, event-driven integrations, 
+                and Industry 4.0 transformations for global manufacturing leaders.
+            </p>
+            <div class="btn-group">
+                <a href="#projects" class="btn-primary"><i class="fas fa-arrow-right"></i> View My Work</a>
+                <a href="#contact" class="btn-outline"><i class="fas fa-comment"></i> Contact Me</a>
+            </div>
+            <div class="stats">
+                <div class="stat-item"><span class="stat-number">3.9+</span> Years Exp</div>
+                <div class="stat-item"><span class="stat-number">12+</span> Projects</div>
+                <div class="stat-item"><span class="stat-number">100%</span> Cloud Native</div>
+            </div>
+        </div>
+        <div class="profile-wrapper">
+            <!-- YOUR PROFILE PICTURE - FIXED -->
+            <img src="Profile%20Picture.jpg" alt="Aswin Kumaran" class="profile-img">
+            <div class="profile-badge">
+                <i class="fas fa-certificate"></i> SAP Certified
             </div>
         </div>
     </div>
+</section>
 
-    <div class="container" id="skills">
-        <h2 class="section-title">⚡ <span>Technical</span> Excellence</h2>
-        <div class="skills-container">
-            <div class="skill-card"><h3><i class="fas fa-cloud"></i> SAP BTP & Cloud</h3><div class="skill-tags"><span class="skill-tag">CAPM Node.js</span><span class="skill-tag">Cloud Foundry</span><span class="skill-tag">XSUAA/OAuth2</span><span class="skill-tag">SAP Build Code</span></div></div>
-            <div class="skill-card"><h3><i class="fas fa-exchange-alt"></i> Integration Suite</h3><div class="skill-tags"><span class="skill-tag">SAP CPI</span><span class="skill-tag">Event Mesh</span><span class="skill-tag">API Management</span><span class="skill-tag">Groovy Script</span></div></div>
-            <div class="skill-card"><h3><i class="fas fa-industry"></i> Digital Manufacturing</h3><div class="skill-tags"><span class="skill-tag">SAP DMC</span><span class="skill-tag">MII/ME</span><span class="skill-tag">POD Plugins</span><span class="skill-tag">PPD Design</span></div></div>
-            <div class="skill-card"><h3><i class="fas fa-database"></i> Database & Frontend</h3><div class="skill-tags"><span class="skill-tag">SAP HANA Cloud</span><span class="skill-tag">UI5/Fiori</span><span class="skill-tag">CDS/SQL</span><span class="skill-tag">JavaScript</span></div></div>
+<!-- Skills Section -->
+<section class="section" id="skills">
+    <div class="section-container">
+        <h2 class="section-title">⚡ Technical Arsenal</h2>
+        <p class="section-subtitle">Enterprise-grade expertise across SAP BTP, Integration, and Manufacturing</p>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+                <h3>SAP BTP & Cloud</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">CAPM (Node.js)</span>
+                    <span class="skill-tag">Cloud Foundry</span>
+                    <span class="skill-tag">SAP Build Code</span>
+                    <span class="skill-tag">XSUAA/OAuth2</span>
+                    <span class="skill-tag">BTP Cockpit</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-exchange-alt"></i></div>
+                <h3>Integration Suite</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">SAP CPI</span>
+                    <span class="skill-tag">Event Mesh</span>
+                    <span class="skill-tag">API Management</span>
+                    <span class="skill-tag">Groovy Script</span>
+                    <span class="skill-tag">IDoc/REST/SOAP</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-industry"></i></div>
+                <h3>Digital Manufacturing</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">SAP DMC</span>
+                    <span class="skill-tag">SAP MII/ME</span>
+                    <span class="skill-tag">POD Plugins</span>
+                    <span class="skill-tag">PPD Design</span>
+                    <span class="skill-tag">Kepware</span>
+                </div>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon"><i class="fas fa-database"></i></div>
+                <h3>Database & Frontend</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">SAP HANA Cloud</span>
+                    <span class="skill-tag">SAP UI5/Fiori</span>
+                    <span class="skill-tag">CDS/SQL</span>
+                    <span class="skill-tag">JavaScript/HTML5</span>
+                </div>
+            </div>
         </div>
     </div>
+</section>
 
-    <div class="container" id="projects">
-        <h2 class="section-title">🏆 <span>Featured</span> Projects</h2>
+<!-- Projects Section - 4 Main Projects -->
+<section class="section" id="projects" style="background: #f8fafc;">
+    <div class="section-container">
+        <h2 class="section-title">🏭 Flagship Implementations</h2>
+        <p class="section-subtitle">End-to-end digital transformation success stories</p>
         <div class="projects-grid">
-            <div class="project-card"><div class="project-icon">🏭</div><h3>Mitsubishi Logisnext</h3><div class="project-tech"><span>CAP Node.js</span><span>DMC</span><span>CPI</span></div><p>Discard Orders API, Paint automation, IRR quality, label printing, custom PODs, real-time S/4HANA sync.</p></div>
-            <div class="project-card"><div class="project-icon">🎁</div><h3>Hallmark</h3><div class="project-tech"><span>CPI</span><span>DMC</span><span>Event Mesh</span></div><p>S/4HANA ↔ DMC integrations, Raise Alert, time tracking approval, Kepware connectivity, Groovy frameworks.</p></div>
-            <div class="project-card"><div class="project-icon">🍞</div><h3>Baker</h3><div class="project-tech"><span>CAPM</span><span>HANA Cloud</span><span>OData</span></div><p>Procurement & inventory CAP apps, OData V4, OAuth2, CI/CD deployments on Cloud Foundry.</p></div>
-            <div class="project-card"><div class="project-icon">🐟</div><h3>Pacific Sea Food</h3><div class="project-tech"><span>CPI</span><span>IDoc</span><span>API Mgmt</span></div><p>PO, ASN, inventory integrations, REST-to-IDoc, Groovy scripts, supplier visibility services.</p></div>
-        </div>
-    </div>
-
-    <div class="container" id="contact">
-        <div class="contact-section">
-            <h2 style="font-size: 2rem;">Let's <span style="color:#ff3333">Build</span> Something Great</h2>
-            <p style="margin: 20px 0; color: var(--text-secondary);">Available for SAP BTP, CPI, and Digital Manufacturing transformations.</p>
-            <div class="contact-links">
-                <a href="mailto:aswinkumaran18@gmail.com"><i class="fas fa-envelope"></i> aswinkumaran18@gmail.com</a>
-                <a href="tel:+919487583800"><i class="fas fa-phone"></i> +91 94875 83800</a>
-                <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-icon">🏭</div>
+                    <h3>Mitsubishi Logisnext</h3>
+                    <div class="project-tech"><span>CAP Node.js</span><span>SAP DMC</span><span>CPI</span><span>UI5</span></div>
+                    <p>Discard Orders API, Next-Gen automation, custom POD plugins, Paint Shop automation (Paint Start/End), Label Printing, IRR quality inspection.</p>
+                </div>
             </div>
-            <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="btn-primary" style="background: #0a66c2; box-shadow: none;">Connect on LinkedIn →</a>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-icon">🎁</div>
+                    <h3>Hallmark</h3>
+                    <div class="project-tech"><span>SAP CPI</span><span>DMC</span><span>MII</span><span>Event Mesh</span></div>
+                    <p>End-to-end S/4HANA ↔ DMC integrations, Raise Alert feature, Time Tracking approval, machine connectivity via Kepware, DMCi dashboards.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-icon">🍞</div>
+                    <h3>Baker - Procurement Suite</h3>
+                    <div class="project-tech"><span>CAPM</span><span>HANA Cloud</span><span>OData</span><span>UI5</span></div>
+                    <p>CAP-based procurement & inventory management apps, OData V4 services, REST APIs secured with OAuth2, CPI interfaces for S/4HANA MM.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-content">
+                    <div class="project-icon">🐟</div>
+                    <h3>Pacific Sea Food</h3>
+                    <div class="project-tech"><span>SAP CPI</span><span>IDoc</span><span>REST</span><span>API Mgmt</span></div>
+                    <p>Real-time integrations for PO, ASN, Inventory Movements, REST-to-IDoc transformations, Groovy scripts, API key validation.</p>
+                </div>
+            </div>
         </div>
     </div>
-</main>
+</section>
+
+<!-- Experience Timeline -->
+<section class="section" id="experience">
+    <div class="section-container">
+        <h2 class="section-title">📅 Experience Timeline</h2>
+        <p class="section-subtitle">3.9+ years of progressive SAP expertise</p>
+        <div class="timeline">
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>SAP BTP & CAP Consultant</h3><p style="color:#e67e22; margin: 8px 0;">Aug 2022 – Present</p><p>CAPM, CPI, DMC, Cloud Foundry, UI5, OData, XSUAA, Event Mesh</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>Mitsubishi Logisnext</h3><p style="color:#e67e22;">Sep 2025 – Current | Lead Consultant</p><p>Discard Orders API, Paint automation, IRR, label printing, Node.js services</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>Hallmark</h3><p style="color:#e67e22;">Jun 2024 – Aug 2025 | CPI & DMC Consultant</p><p>S/4HANA ↔ DMC integrations, Groovy frameworks, Event Mesh, Kepware</p></div></div>
+            <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-content"><h3>Baker & Pacific Sea Food</h3><p style="color:#e67e22;">Nov 2022 – May 2024 | Integration Developer</p><p>CAP applications, OData services, CPI flows, Cloud Foundry deployments</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section" id="contact">
+    <div class="section-container">
+        <div class="contact-section">
+            <h2>Let's Build Something Great Together</h2>
+            <p style="margin-top: 16px; opacity: 0.9;">Available for SAP BTP, CPI, and Digital Manufacturing transformations</p>
+            <div class="contact-buttons">
+                <a href="mailto:aswinkumaran18@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> aswinkumaran18@gmail.com</a>
+                <a href="tel:+919487583800" class="contact-btn"><i class="fas fa-phone"></i> +91 94875 83800</a>
+                <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <footer>
-    <p>© 2026 Aswin Kumaran — SAP BTP | CPI | CAPM | DMC Architect. Industry 4.0 Ready.</p>
+    <p>© 2026 Aswin Kumaran — SAP BTP | CPI | CAPM | DMC Architect</p>
+    <p style="margin-top: 8px; font-size: 0.8rem;">POV: When your portfolio speaks louder than your resume. 🚀</p>
 </footer>
 
 <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for navigation
+    document.querySelectorAll('.nav-links a, .btn-primary, .btn-outline').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href && href !== "#") {
+            if(href && href.startsWith('#')) {
                 e.preventDefault();
                 const target = document.querySelector(href);
-                if (target) target.scrollIntoView({ behavior: 'smooth' });
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
