@@ -15,54 +15,81 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background: linear-gradient(145deg, #667eea 0%, #764ba2 40%, #f093fb 100%);
             min-height: 100vh;
             color: #1a1a2e;
         }
 
-        /* Animated Background Blobs */
-        .blob {
+        /* Animated Background Shapes */
+        .shape {
             position: fixed;
-            width: 400px;
-            height: 400px;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            pointer-events: none;
             z-index: 0;
-            animation: float 20s infinite ease-in-out;
+            pointer-events: none;
         }
 
-        .blob-1 { background: #ff6b6b; top: -100px; right: -100px; animation-delay: 0s; }
-        .blob-2 { background: #4ecdc4; bottom: -100px; left: -100px; animation-delay: -5s; }
-        .blob-3 { background: #ffe66d; top: 50%; left: 30%; animation-delay: -10s; width: 300px; height: 300px; }
+        .shape-1 {
+            top: 10%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,107,107,0.3), transparent);
+            border-radius: 50%;
+            animation: float1 18s infinite ease-in-out;
+        }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -50px) scale(1.1); }
-            66% { transform: translate(-20px, 40px) scale(0.9); }
+        .shape-2 {
+            bottom: 10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(78,205,196,0.3), transparent);
+            border-radius: 50%;
+            animation: float2 22s infinite ease-in-out;
+        }
+
+        .shape-3 {
+            top: 40%;
+            left: 30%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255,230,109,0.25), transparent);
+            border-radius: 50%;
+            animation: float3 15s infinite ease-in-out;
+        }
+
+        @keyframes float1 {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(40px, -40px) scale(1.1); }
+        }
+        @keyframes float2 {
+            0%,100% { transform: translate(0,0) scale(1); }
+            50% { transform: translate(-40px, 40px) scale(1.15); }
+        }
+        @keyframes float3 {
+            0%,100% { transform: translate(0,0) rotate(0deg); }
+            50% { transform: translate(20px, 20px) rotate(10deg); }
         }
 
         .container {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 40px;
             position: relative;
             z-index: 2;
         }
 
-        /* Glassmorphism Navbar */
+        /* Glass Navbar */
         .navbar {
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
             width: 90%;
-            max-width: 1300px;
-            background: rgba(255, 255, 255, 0.25);
-            backdrop-filter: blur(12px);
+            max-width: 1250px;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(16px);
             border-radius: 60px;
-            padding: 12px 32px;
+            padding: 10px 32px;
             z-index: 1000;
             border: 1px solid rgba(255,255,255,0.3);
             box-shadow: 0 8px 32px rgba(0,0,0,0.1);
@@ -72,34 +99,31 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #ffe6f0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            color: white;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #ffe66d;
         }
 
         .nav-links {
             display: flex;
-            gap: 40px;
+            gap: 35px;
             list-style: none;
         }
-
         .nav-links a {
             text-decoration: none;
             color: white;
             font-weight: 500;
-            transition: all 0.3s;
+            transition: 0.3s;
         }
-
         .nav-links a:hover {
             color: #ffe66d;
-            transform: translateY(-2px);
         }
 
         /* Hero Section */
@@ -107,36 +131,36 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 120px 0 60px;
+            padding: 100px 0 60px;
         }
 
         .hero-grid {
             display: grid;
             grid-template-columns: 1.2fr 0.8fr;
-            gap: 60px;
+            gap: 50px;
             align-items: center;
         }
 
+        /* Left Content */
         .hero-badge {
             display: inline-block;
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(4px);
-            padding: 8px 20px;
+            padding: 6px 18px;
             border-radius: 40px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 600;
             color: white;
-            margin-bottom: 28px;
+            margin-bottom: 25px;
         }
 
         .hero h1 {
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
-            margin-bottom: 20px;
             color: white;
+            margin-bottom: 15px;
         }
-
         .hero-highlight {
             background: linear-gradient(135deg, #ffe66d, #ff6b6b);
             -webkit-background-clip: text;
@@ -144,198 +168,195 @@
             color: transparent;
         }
 
-        .hero-desc {
-            font-size: 1.1rem;
+        .hero-sub {
+            font-size: 1.2rem;
             color: rgba(255,255,255,0.9);
-            margin-bottom: 32px;
-            max-width: 500px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero-desc {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 35px;
+            max-width: 480px;
+            line-height: 1.6;
         }
 
         .btn-group {
             display: flex;
-            gap: 16px;
+            gap: 15px;
             flex-wrap: wrap;
+            margin-bottom: 45px;
         }
-
         .btn-primary {
             background: white;
             color: #764ba2;
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
-            transition: all 0.3s;
+            transition: 0.3s;
             display: inline-flex;
             align-items: center;
             gap: 8px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
-
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.15);
         }
-
         .btn-outline {
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(4px);
             border: 1px solid rgba(255,255,255,0.3);
             color: white;
-            padding: 13px 30px;
+            padding: 11px 26px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: 0.3s;
         }
-
         .btn-outline:hover {
             background: rgba(255,255,255,0.3);
             transform: translateY(-3px);
         }
 
-        /* Profile Card */
+        /* Stats Row */
+        .stats-row {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+            padding: 12px 22px;
+            border-radius: 30px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #ffe66d;
+            display: block;
+        }
+        .stat-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Right Profile Card */
         .profile-card {
             background: rgba(255,255,255,0.15);
             backdrop-filter: blur(12px);
             border-radius: 40px;
-            padding: 30px;
+            padding: 35px 25px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.3);
-            transition: all 0.3s;
+            transition: 0.3s;
         }
-
         .profile-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255,255,255,0.25);
+            transform: translateY(-8px);
+            background: rgba(255,255,255,0.22);
         }
-
         .profile-img {
-            width: 220px;
-            height: 220px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid white;
-            margin-bottom: 20px;
+            border: 3px solid white;
+            margin-bottom: 18px;
+            background: #e0e0e0;
         }
-
         .profile-name {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: white;
-            margin-bottom: 8px;
+            margin-bottom: 5px;
         }
-
         .profile-title {
+            font-size: 0.8rem;
             color: rgba(255,255,255,0.8);
-            margin-bottom: 16px;
+            margin-bottom: 18px;
         }
-
-        .stats-mini {
+        .profile-stats {
             display: flex;
             justify-content: center;
-            gap: 24px;
-            margin-top: 16px;
+            gap: 20px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.2);
         }
-
-        .stat-mini {
+        .profile-stat {
             text-align: center;
         }
-
-        .stat-mini-number {
-            font-size: 1.4rem;
+        .profile-stat-num {
+            font-size: 1.2rem;
             font-weight: 800;
             color: #ffe66d;
             display: block;
         }
-
-        /* Stats Row */
-        .stats-row {
-            display: flex;
-            gap: 48px;
-            margin-top: 48px;
-            justify-content: flex-start;
-        }
-
-        .stat-card {
-            background: rgba(255,255,255,0.15);
-            backdrop-filter: blur(8px);
-            padding: 16px 28px;
-            border-radius: 30px;
-            text-align: center;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #ffe66d;
-            display: block;
+        .profile-stat-label {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.7);
         }
 
         /* Section Styles */
         .section {
-            padding: 80px 0;
+            padding: 70px 0;
         }
-
         .section-title {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 15px;
             text-align: center;
             color: white;
         }
-
-        .section-subtitle {
+        .section-sub {
             text-align: center;
             color: rgba(255,255,255,0.8);
-            margin-bottom: 48px;
-            font-size: 1.1rem;
+            margin-bottom: 45px;
+            font-size: 1rem;
         }
 
-        /* Skills Grid - Glassmorphism */
+        /* Skills Grid */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
         }
-
         .skill-card {
-            background: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
             border-radius: 28px;
-            padding: 28px;
-            transition: all 0.3s;
+            padding: 25px;
+            transition: 0.3s;
             border: 1px solid rgba(255,255,255,0.2);
         }
-
         .skill-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255,255,255,0.2);
-            border-color: rgba(255,255,255,0.4);
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.18);
         }
-
         .skill-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
         }
-
         .skill-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 16px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
             color: white;
         }
-
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
-
         .skill-tag {
-            background: rgba(255,255,255,0.2);
-            padding: 6px 14px;
+            background: rgba(255,255,255,0.18);
+            padding: 5px 12px;
             border-radius: 30px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 500;
             color: white;
         }
@@ -343,124 +364,98 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 28px;
         }
-
         .project-card {
-            background: rgba(255,255,255,0.12);
+            background: rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
             border-radius: 28px;
-            overflow: hidden;
-            transition: all 0.3s;
+            padding: 25px;
+            transition: 0.3s;
             border: 1px solid rgba(255,255,255,0.2);
         }
-
         .project-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255,255,255,0.2);
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.18);
         }
-
-        .project-content {
-            padding: 28px;
-        }
-
         .project-icon {
-            font-size: 2.5rem;
-            margin-bottom: 16px;
-        }
-
-        .project-card h3 {
-            font-size: 1.4rem;
+            font-size: 2rem;
             margin-bottom: 12px;
+        }
+        .project-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
             color: white;
         }
-
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 16px 0;
+            margin: 14px 0;
         }
-
         .project-tech span {
-            background: rgba(255,255,255,0.2);
-            padding: 4px 12px;
+            background: rgba(255,255,255,0.18);
+            padding: 3px 10px;
             border-radius: 20px;
-            font-size: 0.7rem;
+            font-size: 0.65rem;
             font-weight: 600;
             color: white;
         }
-
         .project-card p {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
             line-height: 1.5;
         }
 
-        /* Contact Section */
-        .contact-section {
+        /* Contact */
+        .contact-card {
             background: rgba(255,255,255,0.12);
             backdrop-filter: blur(12px);
-            border-radius: 48px;
-            padding: 60px;
+            border-radius: 45px;
+            padding: 50px;
             text-align: center;
             border: 1px solid rgba(255,255,255,0.2);
         }
-
-        .contact-section h2 {
-            font-size: 2rem;
-            margin-bottom: 16px;
+        .contact-card h2 {
+            font-size: 1.8rem;
             color: white;
+            margin-bottom: 12px;
         }
-
-        .contact-section p {
+        .contact-card p {
             color: rgba(255,255,255,0.85);
+            margin-bottom: 30px;
         }
-
         .contact-buttons {
             display: flex;
             justify-content: center;
-            gap: 24px;
+            gap: 20px;
             flex-wrap: wrap;
-            margin-top: 32px;
         }
-
         .contact-btn {
             background: rgba(255,255,255,0.15);
-            padding: 14px 28px;
+            padding: 12px 26px;
             border-radius: 50px;
             text-decoration: none;
             color: white;
             font-weight: 500;
-            transition: all 0.3s;
+            transition: 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             border: 1px solid rgba(255,255,255,0.2);
         }
-
         .contact-btn:hover {
             background: white;
             color: #764ba2;
             transform: translateY(-3px);
         }
-
         .linkedin-btn {
             background: #0077b5;
-            border: none;
         }
-
         .linkedin-btn:hover {
             background: #005e8c;
             color: white;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 40px;
-            color: rgba(255,255,255,0.7);
-            border-top: 1px solid rgba(255,255,255,0.1);
         }
 
         /* Floating Social */
@@ -470,60 +465,64 @@
             bottom: 20px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
             z-index: 100;
         }
-
         .social-icon {
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(8px);
-            width: 48px;
-            height: 48px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: 0.3s;
             border: 1px solid rgba(255,255,255,0.3);
         }
-
         .social-icon:hover {
             background: white;
             color: #764ba2;
             transform: scale(1.1);
         }
 
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
         @media (max-width: 900px) {
             .hero-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero h1 { font-size: 2.5rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-desc { margin-left: auto; margin-right: auto; }
+            .stats-row { justify-content: center; }
             .btn-group { justify-content: center; }
-            .stats-row { justify-content: center; flex-wrap: wrap; }
             .container { padding: 0 20px; }
-            .navbar { width: 95%; padding: 10px 20px; }
-            .nav-links { gap: 20px; }
+            .navbar { width: 95%; padding: 8px 20px; }
+            .nav-links { gap: 18px; }
         }
     </style>
 </head>
 <body>
 
-<!-- Animated Background Blobs -->
-<div class="blob blob-1"></div>
-<div class="blob blob-2"></div>
-<div class="blob blob-3"></div>
+<div class="shape shape-1"></div>
+<div class="shape shape-2"></div>
+<div class="shape shape-3"></div>
 
-<!-- Floating Social -->
 <div class="floating-social">
     <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
     <a href="mailto:aswinkumaran18@gmail.com" class="social-icon"><i class="fas fa-envelope"></i></a>
     <a href="https://github.com/awinkumaran18-prog" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
 </div>
 
-<!-- Navigation -->
 <nav class="navbar">
     <div class="nav-flex">
-        <div class="logo">Aswin.<span style="color:#ffe66d">K</span></div>
+        <div class="logo">Aswin.<span>K</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -534,7 +533,6 @@
 </nav>
 
 <main>
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-grid">
@@ -542,132 +540,59 @@
                     <div class="hero-badge">
                         <i class="fas fa-cloud-upload-alt"></i> SAP BTP · CPI · DMC Architect
                     </div>
-                    <h1>
-                        Hi, I'm <span class="hero-highlight">Aswin Kumaran</span><br>
-                        Your SAP Cloud Expert
-                    </h1>
-                    <p class="hero-desc">
-                        3.9+ years building cloud-native enterprise apps, event-driven CPI integrations, 
-                        and Industry 4.0 digital manufacturing solutions.
-                    </p>
+                    <h1>Hi, I'm <span class="hero-highlight">Aswin Kumaran</span><br>Your SAP Cloud Expert</h1>
+                    <p class="hero-desc">3.9+ years building cloud-native enterprise apps, event-driven CPI integrations, and Industry 4.0 digital manufacturing solutions.</p>
                     <div class="btn-group">
                         <a href="#projects" class="btn-primary"><i class="fas fa-arrow-right"></i> View My Work</a>
                         <a href="#contact" class="btn-outline"><i class="fas fa-comment"></i> Contact Me</a>
                     </div>
                     <div class="stats-row">
-                        <div class="stat-card"><span class="stat-number">12+</span> Enterprise Projects</div>
-                        <div class="stat-card"><span class="stat-number">4</span> Major Implementations</div>
-                        <div class="stat-card"><span class="stat-number">100%</span> Cloud Success</div>
+                        <div class="stat-item"><span class="stat-number">12+</span><span class="stat-label">Enterprise Projects</span></div>
+                        <div class="stat-item"><span class="stat-number">4</span><span class="stat-label">Major Implementations</span></div>
+                        <div class="stat-item"><span class="stat-number">100%</span><span class="stat-label">Cloud Success</span></div>
                     </div>
                 </div>
                 <div class="profile-card">
-                    <img src="Profile%20Picture.jpg" alt="Aswin Kumaran" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?background=ffffff&color=764ba2&size=220&name=Aswin+K&bold=true'">
+                    <img src="profile.jpg" alt="Aswin Kumaran" class="profile-img" onerror="this.src='https://ui-avatars.com/api/?background=ffffff&color=764ba2&size=180&name=Aswin+K&bold=true&length=5'">
                     <div class="profile-name">Aswin Kumaran</div>
                     <div class="profile-title">SAP BTP | CPI | DMC Specialist</div>
-                    <div class="stats-mini">
-                        <div class="stat-mini"><span class="stat-mini-number">3.9+</span> Years</div>
-                        <div class="stat-mini"><span class="stat-mini-number">12+</span> Projects</div>
-                        <div class="stat-mini"><span class="stat-mini-number">24/7</span> Support</div>
+                    <div class="profile-stats">
+                        <div class="profile-stat"><span class="profile-stat-num">3.9+</span><span class="profile-stat-label">Years</span></div>
+                        <div class="profile-stat"><span class="profile-stat-num">12+</span><span class="profile-stat-label">Projects</span></div>
+                        <div class="profile-stat"><span class="profile-stat-num">24/7</span><span class="profile-stat-label">Support</span></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section class="section" id="skills">
         <div class="container">
             <h2 class="section-title">⚡ Technical Excellence</h2>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-cloud"></i></div>
-                    <h3>SAP BTP & Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">CAPM Node.js</span>
-                        <span class="skill-tag">Cloud Foundry</span>
-                        <span class="skill-tag">XSUAA/OAuth2</span>
-                        <span class="skill-tag">SAP Build Code</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-exchange-alt"></i></div>
-                    <h3>Integration Suite</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SAP CPI</span>
-                        <span class="skill-tag">Event Mesh</span>
-                        <span class="skill-tag">API Management</span>
-                        <span class="skill-tag">Groovy Script</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-industry"></i></div>
-                    <h3>Digital Manufacturing</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SAP DMC</span>
-                        <span class="skill-tag">MII/ME</span>
-                        <span class="skill-tag">POD Plugins</span>
-                        <span class="skill-tag">PPD Design</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h3>Database & Frontend</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SAP HANA Cloud</span>
-                        <span class="skill-tag">UI5/Fiori</span>
-                        <span class="skill-tag">CDS/SQL</span>
-                        <span class="skill-tag">JavaScript</span>
-                    </div>
-                </div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-cloud"></i></div><h3>SAP BTP & Cloud</h3><div class="skill-tags"><span class="skill-tag">CAPM Node.js</span><span class="skill-tag">Cloud Foundry</span><span class="skill-tag">XSUAA/OAuth2</span><span class="skill-tag">SAP Build Code</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-exchange-alt"></i></div><h3>Integration Suite</h3><div class="skill-tags"><span class="skill-tag">SAP CPI</span><span class="skill-tag">Event Mesh</span><span class="skill-tag">API Management</span><span class="skill-tag">Groovy Script</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-industry"></i></div><h3>Digital Manufacturing</h3><div class="skill-tags"><span class="skill-tag">SAP DMC</span><span class="skill-tag">MII/ME</span><span class="skill-tag">POD Plugins</span><span class="skill-tag">PPD Design</span></div></div>
+                <div class="skill-card"><div class="skill-icon"><i class="fas fa-database"></i></div><h3>Database & Frontend</h3><div class="skill-tags"><span class="skill-tag">SAP HANA Cloud</span><span class="skill-tag">UI5/Fiori</span><span class="skill-tag">CDS/SQL</span><span class="skill-tag">JavaScript</span></div></div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section class="section" id="projects">
         <div class="container">
             <h2 class="section-title">🏆 Featured Projects</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">🏭</div>
-                        <h3>Mitsubishi Logisnext</h3>
-                        <div class="project-tech"><span>CAP Node.js</span><span>DMC</span><span>CPI</span></div>
-                        <p>Discard Orders API, Paint automation, IRR quality, label printing, custom PODs, real-time S/4HANA sync.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">🎁</div>
-                        <h3>Hallmark</h3>
-                        <div class="project-tech"><span>CPI</span><span>DMC</span><span>Event Mesh</span></div>
-                        <p>S/4HANA ↔ DMC integrations, Raise Alert, time tracking approval, Kepware connectivity, Groovy frameworks.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">🍞</div>
-                        <h3>Baker</h3>
-                        <div class="project-tech"><span>CAPM</span><span>HANA Cloud</span><span>OData</span></div>
-                        <p>Procurement & inventory CAP apps, OData V4, OAuth2, CI/CD deployments on Cloud Foundry.</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-content">
-                        <div class="project-icon">🐟</div>
-                        <h3>Pacific Sea Food</h3>
-                        <div class="project-tech"><span>CPI</span><span>IDoc</span><span>API Mgmt</span></div>
-                        <p>PO, ASN, inventory integrations, REST-to-IDoc, Groovy scripts, supplier visibility services.</p>
-                    </div>
-                </div>
+                <div class="project-card"><div class="project-icon">🏭</div><h3>Mitsubishi Logisnext</h3><div class="project-tech"><span>CAP Node.js</span><span>DMC</span><span>CPI</span></div><p>Discard Orders API, Paint automation, IRR quality, label printing, custom PODs, real-time S/4HANA sync.</p></div>
+                <div class="project-card"><div class="project-icon">🎁</div><h3>Hallmark</h3><div class="project-tech"><span>CPI</span><span>DMC</span><span>Event Mesh</span></div><p>S/4HANA ↔ DMC integrations, Raise Alert, time tracking approval, Kepware connectivity, Groovy frameworks.</p></div>
+                <div class="project-card"><div class="project-icon">🍞</div><h3>Baker</h3><div class="project-tech"><span>CAPM</span><span>HANA Cloud</span><span>OData</span></div><p>Procurement & inventory CAP apps, OData V4, OAuth2, CI/CD deployments on Cloud Foundry.</p></div>
+                <div class="project-card"><div class="project-icon">🐟</div><h3>Pacific Sea Food</h3><div class="project-tech"><span>CPI</span><span>IDoc</span><span>API Mgmt</span></div><p>PO, ASN, inventory integrations, REST-to-IDoc, Groovy scripts, supplier visibility services.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section class="section" id="contact">
         <div class="container">
-            <div class="contact-section">
+            <div class="contact-card">
                 <h2>Let's Build Something Great</h2>
                 <p>Available for SAP BTP, CPI, and Digital Manufacturing transformations.</p>
                 <div class="contact-buttons">
@@ -675,7 +600,7 @@
                     <a href="tel:+919487583800" class="contact-btn"><i class="fas fa-phone"></i> +91 94875 83800</a>
                     <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="contact-btn linkedin-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
-                <div style="margin-top: 28px;">
+                <div style="margin-top: 25px;">
                     <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="btn-primary" style="background: #0077b5; color: white;">Connect on LinkedIn →</a>
                 </div>
             </div>
@@ -685,11 +610,10 @@
 
 <footer>
     <p>© 2026 Aswin Kumaran — SAP BTP | CPI | CAPM | DMC Architect</p>
-    <p style="margin-top: 8px; font-size: 0.8rem;">POV: When your portfolio speaks louder than your resume. 🚀</p>
+    <p style="margin-top: 6px; font-size: 0.75rem;">POV: When your portfolio speaks louder than your resume. 🚀</p>
 </footer>
 
 <script>
-    // Smooth scroll
     document.querySelectorAll('.nav-links a, .btn-primary, .btn-outline, .contact-btn').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
