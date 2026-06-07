@@ -2,302 +2,325 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aswin Kumaran | SAP BTP & CPI Consultant</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Aswin Kumaran | Senior SAP BTP & CPI Consultant</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: #f0f4f8;
-            color: #1e293b;
-            line-height: 1.6;
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
-        
+
+        /* Premium Container */
         .container {
-            max-width: 1200px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 40px;
         }
-        
-        /* Header */
+
+        /* Modern Floating Header */
         header {
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             position: sticky;
-            top: 0;
+            top: 20px;
             z-index: 100;
-        }
-        
-        .nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-            flex-wrap: wrap;
-        }
-        
-        .logo {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: #0f5b8c;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 30px;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #334155;
-            font-weight: 600;
-        }
-        
-        .nav-links a:hover {
-            color: #ffb347;
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #0f5b8c 0%, #1e3a5f 100%);
-            color: white;
-            padding: 80px 0;
-            border-radius: 0 0 40px 40px;
-        }
-        
-        .hero-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-        
-        .hero-text {
-            flex: 1;
-        }
-        
-        .hero-text h1 {
-            font-size: 3rem;
             margin-bottom: 20px;
         }
-        
-        .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            opacity: 0.95;
+        .nav-container {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border-radius: 70px;
+            box-shadow: 0 8px 25px -8px rgba(0,0,0,0.08), 0 0 0 1px rgba(0,0,0,0.02);
+            padding: 6px 24px;
         }
-        
-        .badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.2);
-            padding: 8px 20px;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            margin-bottom: 25px;
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
         }
-        
-        .btn {
-            display: inline-block;
-            background: #ffb347;
-            color: #1e293b;
-            padding: 12px 30px;
-            border-radius: 40px;
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(125deg, #0B3B5F, #1D5A8B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+        .logo span {
+            color: #E67E22;
+            background: none;
+            -webkit-background-clip: unset;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
             text-decoration: none;
+            font-weight: 500;
+            color: #2c4c6c;
+            transition: color 0.2s;
+            font-size: 0.9rem;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #E67E22;
+        }
+        .btn-small {
+            background: #1D5A8B;
+            color: white;
+            border: none;
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+        .btn-small:hover {
+            background: #0B3B5F;
+            transform: scale(1.02);
+        }
+
+        /* Hero Section - High Level */
+        .hero {
+            padding: 40px 0 20px 0;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 48px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .hero-content {
+            flex: 1.4;
+        }
+        .hero-badge {
+            background: #EFF6FF;
+            color: #1D5A8B;
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
             font-weight: 700;
-            margin-right: 15px;
-            transition: transform 0.2s;
+            display: inline-block;
+            margin-bottom: 24px;
+            letter-spacing: 0.3px;
         }
-        
-        .btn:hover {
+        .hero-content h1 {
+            font-size: 3.3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+            color: #0B2B40;
+        }
+        .hero-highlight {
+            color: #E67E22;
+            border-bottom: 3px solid #E67E22;
+        }
+        .hero-desc {
+            font-size: 1.08rem;
+            color: #2c526e;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+        .btn-primary {
+            background: #1D5A8B;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .btn-primary:hover {
+            background: #0E3E60;
             transform: translateY(-2px);
+            box-shadow: 0 12px 18px -8px rgba(0,0,0,0.12);
         }
-        
         .btn-outline {
             background: transparent;
-            border: 2px solid white;
-            color: white;
+            border: 1px solid #BED3E6;
+            padding: 11px 26px;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            color: #1D5A8B;
+            transition: all 0.2s;
         }
-        
+        .btn-outline:hover {
+            border-color: #E67E22;
+            color: #E67E22;
+        }
         .hero-stats {
             display: flex;
-            gap: 40px;
+            gap: 32px;
             margin-top: 40px;
         }
-        
-        .stat {
-            text-align: center;
+        .stat-item {
+            border-left: 2px solid #E67E22;
+            padding-left: 16px;
         }
-        
         .stat-number {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 800;
-            display: block;
+            color: #0B3B5F;
+            line-height: 1.2;
         }
-        
-        /* Section Titles */
+        /* Professional Cards */
         .section-title {
             font-size: 2rem;
-            margin: 50px 0 30px 0;
-            position: relative;
+            font-weight: 700;
+            margin: 60px 0 16px 0;
+            letter-spacing: -0.3px;
+            color: #0B2B40;
         }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: #ffb347;
-            margin-top: 10px;
+        .section-sub {
+            color: #4a6f8f;
+            margin-bottom: 40px;
+            font-weight: 400;
         }
-        
-        /* Skills */
-        .skills-grid {
+        .skills-pill {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 50px;
+            margin: 30px 0 20px;
         }
-        
-        .skill {
+        .pill {
             background: white;
-            padding: 10px 22px;
+            padding: 8px 22px;
             border-radius: 40px;
             font-weight: 500;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
+            font-size: 0.85rem;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            border: 1px solid #e2edf7;
+            transition: all 0.2s;
         }
-        
-        .skill i {
+        .pill i {
             margin-right: 8px;
-            color: #0f5b8c;
+            color: #E67E22;
         }
-        
-        /* Projects */
+        .pill:hover {
+            border-color: #E67E22;
+        }
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 30px;
-            margin: 40px 0;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 32px;
+            margin: 32px 0 40px;
         }
-        
         .project-card {
             background: white;
-            border-radius: 20px;
-            padding: 25px;
-            transition: all 0.3s;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 28px;
+            padding: 28px;
+            transition: all 0.25s;
+            box-shadow: 0 12px 26px -12px rgba(0,0,0,0.08);
+            border: 1px solid #eef2f8;
         }
-        
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+            transform: translateY(-6px);
+            box-shadow: 0 24px 36px -16px rgba(0,0,0,0.12);
+            border-color: #cde1ef;
         }
-        
         .project-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
         }
-        
         .project-card h3 {
             font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #0f5b8c;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
-        
         .project-tech {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin: 15px 0;
+            margin: 18px 0;
         }
-        
         .project-tech span {
-            background: #eef2ff;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            background: #EFF6FF;
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-size: 0.7rem;
             font-weight: 600;
+            color: #1D5A8B;
         }
-        
-        /* Experience */
         .exp-item {
             background: white;
-            border-radius: 20px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: 5px solid #ffb347;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-radius: 24px;
+            padding: 28px;
+            margin-bottom: 24px;
+            border-left: 5px solid #E67E22;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.03);
+            transition: all 0.2s;
         }
-        
         .exp-header {
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
+            margin-bottom: 12px;
+        }
+        .exp-title {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: #1D5A8B;
+        }
+        /* Contact premium block */
+        .contact-block {
+            background: linear-gradient(135deg, #122b3e 0%, #1c4c6e 100%);
+            border-radius: 48px;
+            padding: 52px 48px;
+            margin: 60px 0 40px;
+            color: white;
+            text-align: center;
+        }
+        .contact-block h2 {
+            font-size: 2rem;
             margin-bottom: 15px;
         }
-        
-        .exp-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #0f5b8c;
-        }
-        
-        .exp-date {
-            color: #64748b;
-        }
-        
-        .exp-list {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        
-        .exp-list li {
-            margin: 8px 0;
-        }
-        
-        /* Contact */
-        .contact-section {
-            background: #1e293b;
-            color: white;
-            padding: 50px;
-            border-radius: 30px;
-            text-align: center;
-            margin: 50px 0;
-        }
-        
-        .contact-info {
+        .contact-flex {
             display: flex;
             justify-content: center;
             gap: 40px;
             flex-wrap: wrap;
-            margin: 30px 0;
+            margin: 30px 0 20px;
         }
-        
-        .contact-info a {
-            color: #ffb347;
+        .contact-flex a {
+            color: #FDB462;
             text-decoration: none;
+            font-weight: 500;
         }
-        
-        /* Footer */
         footer {
             text-align: center;
             padding: 30px;
-            color: #64748b;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 50px;
+            color: #6a8cae;
+            font-size: 0.85rem;
+            border-top: 1px solid #e2edf5;
         }
-        
-        @media (max-width: 768px) {
-            .hero-text h1 { font-size: 2rem; }
-            .nav { flex-direction: column; gap: 15px; }
-            .projects-grid { grid-template-columns: 1fr; }
+        @media (max-width: 780px) {
+            .container { padding: 0 20px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .nav-container { border-radius: 40px; padding: 6px 16px; }
         }
     </style>
 </head>
@@ -305,211 +328,114 @@
 
 <header>
     <div class="container">
-        <div class="nav">
-            <div class="logo">Aswin Kumaran</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+        <div class="nav-container">
+            <div class="nav-bar">
+                <div class="logo">Aswin.<span>k</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#exp">Experience</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn-small"><i class="fas fa-paper-plane"></i> Hire</a>
+            </div>
         </div>
     </div>
 </header>
 
-<section class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <div class="badge">🚀 SAP BTP • CPI • DMC Expert</div>
-                <h1>Cloud-Native SAP Solutions for Manufacturing</h1>
-                <p>SAP BTP Consultant with 3.9+ years delivering scalable, secure enterprise applications on SAP Business Technology Platform.</p>
-                <div>
-                    <a href="#contact" class="btn">📧 Hire Me</a>
-                    <a href="#projects" class="btn btn-outline">📁 View Work</a>
+<main>
+    <div class="container" id="home">
+        <div class="hero">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge"><i class="fas fa-cloud-upload-alt"></i> SENIOR SAP BTP • CPI • DMC</div>
+                    <h1>Cloud-native architect for <span class="hero-highlight">Industry 4.0</span> & enterprise scale</h1>
+                    <p class="hero-desc">Aswin Kumaran — SAP BTP Consultant with 3.9+ years delivering robust CAP services, event-driven CPI integrations, and digital manufacturing solutions on Cloud Foundry.</p>
+                    <div>
+                        <a href="#contact" class="btn-primary"><i class="fas fa-calendar-check"></i> Let’s connect</a>
+                        <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="btn-outline" style="margin-left: 12px;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item"><span class="stat-number">3.9+</span><br>Years</div>
+                        <div class="stat-item"><span class="stat-number">12+</span><br>Projects</div>
+                        <div class="stat-item"><span class="stat-number">100%</span><br>Cloud</div>
+                    </div>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat"><span class="stat-number">3.9+</span> Years Exp</div>
-                    <div class="stat"><span class="stat-number">12+</span> Projects</div>
-                    <div class="stat"><span class="stat-number">100%</span> Cloud Native</div>
+                <div style="flex:0.8; background: #eef2fa; border-radius: 42px; padding: 28px; text-align: center;">
+                    <i class="fas fa-microchip" style="font-size: 4rem; color:#1D5A8B;"></i>
+                    <i class="fas fa-chalkboard-user" style="font-size: 3rem; display: block; margin-top: 16px;"></i>
+                    <p style="margin-top: 20px; font-weight: 500;">CAP • CPI • DMC • UI5</p>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
-<div class="container" id="skills">
-    <h2 class="section-title">🛠️ Technical Skills</h2>
-    <div class="skills-grid">
-        <span class="skill"><i>💻</i> SAP CAPM (Node.js)</span>
-        <span class="skill"><i>🔄</i> SAP CPI / Integration Suite</span>
-        <span class="skill"><i>🏭</i> SAP DMC / MII / ME</span>
-        <span class="skill"><i>🗄️</i> SAP HANA Cloud</span>
-        <span class="skill"><i>☁️</i> Cloud Foundry</span>
-        <span class="skill"><i>🎨</i> SAP UI5 / Fiori Elements</span>
-        <span class="skill"><i>📨</i> Event Mesh</span>
-        <span class="skill"><i>🔒</i> OAuth2 / XSUAA</span>
-        <span class="skill"><i>🐙</i> GitHub / CI/CD</span>
-        <span class="skill"><i>🤖</i> SAP AI Core</span>
+    <div class="container" id="skills">
+        <h2 class="section-title">Core technical excellence</h2>
+        <div class="skills-pill">
+            <span class="pill"><i class="fab fa-node-js"></i> CAPM Node.js</span>
+            <span class="pill"><i class="fas fa-database"></i> SAP HANA Cloud</span>
+            <span class="pill"><i class="fas fa-exchange-alt"></i> SAP CPI/Integration Suite</span>
+            <span class="pill"><i class="fas fa-bolt"></i> Event Mesh</span>
+            <span class="pill"><i class="fas fa-laptop-code"></i> SAP Build / BAS</span>
+            <span class="pill"><i class="fas fa-chart-line"></i> SAP DMC / MII / ME</span>
+            <span class="pill"><i class="fas fa-mobile-alt"></i> SAP UI5 & Fiori</span>
+            <span class="pill"><i class="fas fa-shield-alt"></i> XSUAA / OAuth2</span>
+            <span class="pill"><i class="fab fa-git-alt"></i> CI/CD Github</span>
+        </div>
     </div>
-</div>
 
-<div class="container" id="projects">
-    <h2 class="section-title">🏆 Key Projects</h2>
-    <div class="projects-grid">
-        <div class="project-card">
-            <div class="project-icon">🏭</div>
-            <h3>Mitsubishi Logisnext</h3>
-            <div class="project-tech">
-                <span>CAP Node.js</span>
-                <span>SAP DMC</span>
-                <span>CPI</span>
-                <span>UI5</span>
-            </div>
-            <p>Designed CAP services for Discard Orders & Next Gen automation. Built custom POD plugins, Paint Shop automation, and label printing integration. Real-time S/4HANA sync via CPI.</p>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-icon">🏍️</div>
-            <h3>ZERO Motorcycles</h3>
-            <div class="project-tech">
-                <span>SAP DMC</span>
-                <span>Node.js</span>
-                <span>Cloud Print</span>
-                <span>HANA Cloud</span>
-            </div>
-            <p>Built Packout/Goods Receipt plugin, Scrap Inventory tool, automated resource allocation. Integrated HANA DB via BTP Node.js services and custom order card extensions.</p>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-icon">🎁</div>
-            <h3>Hallmark</h3>
-            <div class="project-tech">
-                <span>SAP DMC</span>
-                <span>CPI</span>
-                <span>MII</span>
-                <span>Kepware</span>
-            </div>
-            <p>Introduced Raise Alert, custom time tracking approval, machine connectivity with Kepware, DMCi dashboards, and custom SFC-status reports.</p>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-icon">🐟</div>
-            <h3>Pacific Sea Food</h3>
-            <div class="project-tech">
-                <span>SAP CPI</span>
-                <span>IDoc</span>
-                <span>REST</span>
-                <span>BTP CAP</span>
-            </div>
-            <p>Real-time Purchase Orders, ASN, Inventory movement integrations between S/4HANA & WMS. Groovy scripts and API management.</p>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-icon">🍞</div>
-            <h3>Baker - Procurement Suite</h3>
-            <div class="project-tech">
-                <span>CAPM</span>
-                <span>HANA Cloud</span>
-                <span>OData</span>
-                <span>UI5</span>
-            </div>
-            <p>Developed procurement & inventory CAP apps, OData services with custom business rules, deployed on Cloud Foundry via CI/CD.</p>
-        </div>
-        
-        <div class="project-card">
-            <div class="project-icon">🧠</div>
-            <h3>Event Mesh + AI Core</h3>
-            <div class="project-tech">
-                <span>Event Mesh</span>
-                <span>GenAI Hub</span>
-                <span>CAP</span>
-            </div>
-            <p>Event-driven manufacturing architecture with SAP Event Mesh. Explored AI-enabled CAP using SAP Generative AI Hub.</p>
+    <div class="container" id="projects">
+        <h2 class="section-title">Flagship implementations</h2>
+        <p class="section-sub">End-to-end digital transformation & integration success</p>
+        <div class="projects-grid">
+            <div class="project-card"><div class="project-icon">🏭</div><h3>Mitsubishi Logisnext</h3><div class="project-tech"><span>CAP</span><span>DMC</span><span>CPI</span></div><p>Discard orders, Next-gen automation, POD extensions, paint shop automation & label print integration.</p></div>
+            <div class="project-card"><div class="project-icon">🏍️</div><h3>ZERO Motorcycles</h3><div class="project-tech"><span>DMC</span><span>Node.js</span><span>HANA</span></div><p>Packout GR, scrap inventory plugin, auto resource allocation, real-time dashboards.</p></div>
+            <div class="project-card"><div class="project-icon">🎁</div><h3>Hallmark</h3><div class="project-tech"><span>DMC</span><span>CPI</span><span>Kepware</span></div><p>Raise alert, time tracking approval, machine connectivity, DMCi analytics, custom SFC reporting.</p></div>
+            <div class="project-card"><div class="project-icon">🐟</div><h3>Pacific Sea Food</h3><div class="project-tech"><span>CPI</span><span>IDoc</span><span>REST</span></div><p>PO, ASN, inventory movements, Groovy scripts, API management between S/4HANA & WMS.</p></div>
+            <div class="project-card"><div class="project-icon">🍞</div><h3>Baker Procurement</h3><div class="project-tech"><span>CAPM</span><span>OData</span><span>UI5</span></div><p>CAP-based inventory apps, OData services, role security, Cloud Foundry deployment.</p></div>
+            <div class="project-card"><div class="project-icon">🧠</div><h3>Event Mesh + GenAI</h3><div class="project-tech"><span>Event Mesh</span><span>AI Core</span></div><p>Event-driven manufacturing & predictive quality POC using SAP GenAI Hub.</p></div>
         </div>
     </div>
-</div>
 
-<div class="container" id="experience">
-    <h2 class="section-title">💼 Work Experience</h2>
-    
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-title">SAP BTP & Integration Consultant – Mitsubishi</span>
-            <span class="exp-date">Sep 2025 – Present</span>
-        </div>
-        <ul class="exp-list">
-            <li>Designed CAP Node.js services (Discard Orders, Next Gen automation) with XSUAA-secured OData APIs</li>
-            <li>Built custom DMC POD plugins & Inspection Result Recording (IRR) for quality compliance</li>
-            <li>Integrated label printing via Cloud Print Manager</li>
-            <li>Orchestrated SAP CPI iFlows synchronizing production orders between S/4HANA and DMC</li>
-        </ul>
+    <div class="container" id="exp">
+        <h2 class="section-title">Experience leadership</h2>
+        <div class="exp-item"><div class="exp-header"><span class="exp-title">SAP BTP & Integration Consultant – Mitsubishi</span><span>Sep 2025 – present</span></div><ul class="exp-list"><li>Designed CAP Node.js services + OData with XSUAA, built custom DMC POD plugins.</li><li>Implemented IRR, Paint automation, and CPI sync with S/4HANA for real-time production.</li></ul></div>
+        <div class="exp-item"><div class="exp-header"><span class="exp-title">SAP CPI & DMC Consultant – Hallmark</span><span>Jun 2024 – Aug 2025</span></div><ul><li>Complex integrations S/4HANA ↔ DMC using CPI, developed Groovy frameworks, JMS retries.</li><li>Custom DMC extensions (Change Production, Workcenter POD) & Event Mesh adoption.</li></ul></div>
+        <div class="exp-item"><div class="exp-header"><span class="exp-title">BTP & Integration Developer – Baker / Pacific Sea Food</span><span>Nov 2022 – May 2024</span></div><ul><li>CAP based procurement services, OData, secured APIs, CPI interfaces for PO/Inventory.</li><li>Cloud Foundry deployment, CI/CD pipelines, API management policies.</li></ul></div>
     </div>
-    
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-title">SAP CPI & DMC Consultant – Hallmark</span>
-            <span class="exp-date">Jun 2024 – Aug 2025</span>
-        </div>
-        <ul class="exp-list">
-            <li>End-to-end integrations between S/4HANA and SAP Digital Manufacturing</li>
-            <li>Developed custom DMC plugins (Change Production, Workcenter POD extension)</li>
-            <li>Built Groovy scripting framework for dynamic routing and JMS retries in CPI</li>
-            <li>Integrated SAP Event Mesh with CAP services for event-driven manufacturing</li>
-        </ul>
-    </div>
-    
-    <div class="exp-item">
-        <div class="exp-header">
-            <span class="exp-title">SAP BTP & Integration Developer – Baker / Pacific Sea Food</span>
-            <span class="exp-date">Nov 2022 – May 2024</span>
-        </div>
-        <ul class="exp-list">
-            <li>CAP-based procurement apps with CDS models and SAP HANA Cloud persistence</li>
-            <li>CPI integrations: REST-to-IDoc, SOAP-to-REST, OData for PO and inventory updates</li>
-            <li>API Management with OAuth2, API key validation, rate limiting</li>
-            <li>Deployed solutions using Cloud Foundry with CI/CD pipelines</li>
-        </ul>
-    </div>
-</div>
 
-<div class="container" id="contact">
-    <div class="contact-section">
-        <h2>📞 Let's Connect</h2>
-        <p style="margin: 15px 0; font-size: 1.1rem;">Open for SAP BTP, CPI, and DMC opportunities</p>
-        <div class="contact-info">
-            <div>📧 <a href="mailto:aswinkumaran18@gmail.com">aswinkumaran18@gmail.com</a></div>
-            <div>📞 <a href="tel:+919487583800">+91 94875 83800</a></div>
-            <div>📍 India</div>
-        </div>
-        <div>
-            <a href="https://github.com/leeshark21/video_portfolio" target="_blank" style="color: #ffb347; margin: 0 10px;">GitHub</a>
-            <a href="#" style="color: #ffb347; margin: 0 10px;">LinkedIn</a>
+    <div class="container" id="contact">
+        <div class="contact-block">
+            <h2>Let’s shape the future of manufacturing & cloud</h2>
+            <p style="font-size: 1rem; margin-top: 8px;">Available for freelance, full-time or advisory roles</p>
+            <div class="contact-flex">
+                <div><i class="fas fa-envelope"></i> <a href="mailto:aswinkumaran18@gmail.com">aswinkumaran18@gmail.com</a></div>
+                <div><i class="fas fa-phone-alt"></i> <a href="tel:+919487583800">+91 94875 83800</a></div>
+                <div><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank">linkedin.com/in/aswin-kumaran</a></div>
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="https://www.linkedin.com/in/aswin-kumaran-13518b2b6" target="_blank" class="btn-primary" style="background: #0a66c2;"><i class="fab fa-linkedin"></i> Follow on LinkedIn</a>
+            </div>
         </div>
     </div>
-</div>
-
+</main>
 <footer>
-    <p>© 2026 Aswin Kumaran M — SAP BTP | CPI | CAPM | DMC Consultant</p>
-    <p style="margin-top: 10px; font-size: 0.85rem;">Built with ☕ and enterprise expertise</p>
+    <p>© 2026 Aswin Kumaran — SAP BTP | CPI | CAPM | Digital Manufacturing Consultant. Built with precision.</p>
+    <p style="margin-top: 8px;"><i class="fas fa-certificate"></i> 3.9+ years · Cloud native · Industry 4.0 ready</p>
 </footer>
-
 <script>
-    // Smooth scroll for navigation
-    document.querySelectorAll('.nav-links a, .btn').forEach(anchor => {
+    document.querySelectorAll('.nav-links a, .btn-small[href="#contact"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             if(href && href.startsWith('#')) {
                 e.preventDefault();
                 const target = document.querySelector(href);
-                if(target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
+                if(target) target.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 </script>
-
 </body>
 </html>
